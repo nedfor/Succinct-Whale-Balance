@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succinct Whale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-screen">
+        <h1>Succinct Whale</h1>
+        <button id="how-to-play-btn" class="help-button">How to Play?</button>
+        <input type="text" id="username" placeholder="Enter your username">
+        <button id="start-game">Start Game</button>
+    </div>
+
+    <!-- Game Over Popup -->
+    <div id="game-over-popup" class="popup">
+        <div class="popup-content">
+            <h2>Game Over!</h2>
+            <div class="stats-table">
+                <table>
+                    <tr>
+                        <th>Stats</th>
+                        <th>Amount</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>BTC Collected</td>
+                        <td id="final-btc-amount">0</td>
+                        <td id="final-btc-value">0</td>
+                    </tr>
+                    <tr>
+                        <td>ETH Collected</td>
+                        <td id="final-eth-amount">0</td>
+                        <td id="final-eth-value">0</td>
+                    </tr>
+                    <tr>
+                        <td>Airdrops</td>
+                        <td id="final-airdrop-count">0</td>
+                        <td id="final-airdrop-value">0</td>
+                    </tr>
+                    <tr>
+                        <td>Scams Hit</td>
+                        <td id="final-scam-count">0</td>
+                        <td id="final-scam-value">0</td>
+                    </tr>
+                    <tr>
+                        <td>Hacker Hits</td>
+                        <td id="final-hacker-count">-</td>
+                        <td id="final-hacker-value">-</td>
+                    </tr>
+                    <tr>
+                        <td>Trading Profit</td>
+                        <td>-</td>
+                        <td id="trading-profit">-</td>
+                    </tr>
+                    <tr>
+                        <td>Net Profit</td>
+                        <td>-</td>
+                        <td id="net-profit">-</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Final Portfolio</td>
+                        <td>-</td>
+                        <td id="final-portfolio">-</td>
+                    </tr>
+                </table>
+            </div>
+            <button id="play-again" class="play-again-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- How to Play Popup -->
+    <div id="how-to-play-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>How to Play?</h2>
+            <div class="item-guide">
+                <div class="guide-item">
+                    <img src="assets/btcpixel.png" alt="BTC" width="30">
+                    <p>Bitcoin - Collect and sell when the price goes up!</p>
+                </div>
+                <div class="guide-item">
+                    <img src="assets/ethpixel.png" alt="ETH" width="30">
+                    <p>Ethereum - Collect and sell when the price goes up!</p>
+                </div>
+                <div class="guide-item">
+                    <img src="assets/airdrop.png" alt="Airdrop" width="30">
+                    <p>Airdrop - Get free USDT!</p>
+                </div>
+                <div class="guide-item">
+                    <img src="assets/scam.png" alt="Scam" width="30">
+                    <p>Scam - Avoid these! They will steal your USDT!</p>
+                </div>
+                <div class="guide-item">
+                    <img src="assets/hacker.png" alt="Hacker" width="30">
+                    <p>Hacker - Watch out! They steal 10% of your portfolio!</p>
+                </div>
+            </div>
+            <div class="controls">
+                <p>Use ⬅️ ➡️ arrow keys to control the crab</p>
+                <p>Get the highest portfolio value in 2 minutes!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen">
+        <div class="game-container">
+            <div class="game-area">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+            
+            <div class="info-panel">
+                <div class="info-section">
+                    <h2>Username</h2>
+                    <div id="current-username" class="value"></div>
+                    <h2>Time</h2>
+                    <div id="game-time" class="value">02:00</div>
+                </div>
+
+                <div class="info-section">
+                    <h2>USDT Balance</h2>
+                    <div id="usdt-balance" class="value">300,000</div>
+                    <h2>Portfolio Value</h2>
+                    <div id="portfolio-value" class="value">300,000</div>
+                </div>
+
+                <div class="info-section">
+                    <h2>BTC Balance</h2>
+                    <div id="btc-balance" class="value">0</div>
+                    <h2>Current BTC Price</h2>
+                    <div id="btc-price" class="value">10,000</div>
+                    <button id="sell-btc">Sell BTC</button>
+                </div>
+
+                <div class="info-section">
+                    <h2>ETH Balance</h2>
+                    <div id="eth-balance" class="value">0</div>
+                    <h2>Current ETH Price</h2>
+                    <div id="eth-price" class="value">1,000</div>
+                    <button id="sell-eth">Sell ETH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 
