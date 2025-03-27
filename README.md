@@ -1,4 +1,4 @@
-# Crypto Catching Game 🦀
+# Succinct Trading Game 🦀
 
 A fun and educational game where you catch falling cryptocurrencies while avoiding scams and hackers!
 
